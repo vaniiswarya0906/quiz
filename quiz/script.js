@@ -3,7 +3,7 @@ const nextButton= document.getElementById('next-btn')
 
 const questionContainerElement= document.getElementById('question-container')
 const questionElement= document.getElementById('question')
-const answerButtonElement= document.getElementById('answer-buttons')
+const answerButtonsElement= document.getElementById('answer-buttons')
 let shuffledQuestions,currectQuestionIndex;
 let quizScore=0;
 
@@ -51,7 +51,7 @@ function resetState()
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while(answerButtonsElement.firstChild){
-        answerButtonElement.removeChild(answerButtonElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonElement.firstChild)
     }
 }
 
@@ -64,10 +64,10 @@ function selectAnswer(e){
         setStatusClass(button ,button.dataset.correct)
     })
     if(shuffledQuestions.length > currectQuestionIndex +1){
-        nextButton.classList.remove("hide")
+        nextButton.classList.remove('hide')
     }else{
-        startButton.innerText="restart"
-        startButton.classList.remove("hide")
+        startButton.innerText ="restart"
+        startButton.classList.remove('hide')
     }
     if(selectedButton.dataset=correct){
         quizScore++
